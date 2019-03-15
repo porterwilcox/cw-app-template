@@ -29,7 +29,8 @@ class Main {
           methods: "*"
         }),
         ...AuthProvider
-      ]
+      ],
+      staticFiles: __dirname + '/../client' // uses dist/client
     })
 
     this.Area.configure.SessionUserService({

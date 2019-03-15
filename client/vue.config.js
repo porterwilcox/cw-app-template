@@ -4,6 +4,8 @@ function resolve(dir) {
 }
 
 module.exports = {
+  outputDir: resolve("../dist/client"),
+  productionSourceMap: false,
   chainWebpack: config => {
     config.resolve.alias
       .set("@server", resolve("../server"))
