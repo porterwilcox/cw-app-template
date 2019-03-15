@@ -1,0 +1,29 @@
+{
+  "name": "{{name}}",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node dist/index.js",
+    "serve": "npm run --prefix client serve"
+  },
+  "keywords": [],
+  "author": "Jake Overall <joverall22@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "codeworks-starter": "^1.0.7",
+    "cors": "^2.8.5",
+    "express": "^4.16.4",
+    "mongtype": "^3.7.0"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.4",
+    "@types/express": "^4.16.1"
+  },
+  "_moduleAliases": {
+    "@server": "dist/server",
+    "@client": "dist/client",
+    "@entities": "dist/submodules/entities"
+  }
+}

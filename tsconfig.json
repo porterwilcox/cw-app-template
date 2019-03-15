@@ -1,0 +1,40 @@
+{
+  "compilerOptions": {
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "target": "es2015",
+    "module": "commonjs",
+    "esModuleInterop": true,
+    "noImplicitAny": false,
+    "moduleResolution": "node",
+    "inlineSourceMap": true,
+    "inlineSources": true,
+    "outDir": "dist",
+    "declaration": true,
+    "declarationDir": "dist/@types",
+    "baseUrl": ".",
+    "paths": {
+      "@client/*": [
+        "client/src/*"
+      ],
+      "@entities/*": [
+        "submodules/entities/*"
+      ],
+      "@server/*": [
+        "server/*"
+      ]
+    },
+    "types": [
+      "node",
+      "express"
+    ],
+    "strict": true
+  },
+  "include": [
+    "server/**/*"
+  ],
+  "exclude": [
+    "**/*.js",
+    "client/**/*"
+  ]
+}
