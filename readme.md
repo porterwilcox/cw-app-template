@@ -1,5 +1,11 @@
 # {{name}}
 
+## Create Project
+```
+npm install -g create-project 
+create-project new-project-name jakeoverall/cw-app-template
+```
+
 ## Project setup
 ```
 npm i
