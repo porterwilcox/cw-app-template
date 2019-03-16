@@ -9,7 +9,7 @@ export default class SampleController {
   @FromBody(Object)
   async Login(_, data: any): Promise<any> {
     try {
-      let user = SessionService().user 
+      let user = SessionUser().user 
       data.userId = user.id
       await this._sampleService.SampleMethod(data)
       return user
