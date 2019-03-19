@@ -12,7 +12,7 @@
     "outDir": "dist",
     "declaration": true,
     "declarationDir": "dist/@types",
-    "baseUrl": ".",
+    "baseUrl": "./",
     "paths": {
       "@client/*": [
         "client/src/*"
