@@ -12,8 +12,7 @@ class Main {
   SocketZones: Server[] = []
 
   protected ConfigureDB() {
-    process.env.CONNECTIONSTRING = process.env.CONNECTIONSTRING || "LOCALDB"
-    DbConnection.CONNECTIONSTRING = process.env.CONNECTIONSTRING
+    DbConnection.CONNECTIONSTRING = process.env.CONNECTIONSTRING || ""
     new DbConnection().Open()
       .then(() => console.log("Connected"))
       .catch((err) => console.error(err))
@@ -24,13 +23,15 @@ class Main {
       name: "Main",
       middleware: [
         cors({
-          origin: [/domain/, /localhost/],
+          origin: [
+            process.env.NODE_ENV == "prod" ? /codeworks/ : /localhost/
+          ],
           credentials: true,
-          methods: "*"
+          methods: ["GET, PUT, POST, DELETE", "OPTIONS"]
         }),
         ...AuthProvider
       ],
-      staticFiles: __dirname + '/../client' // uses dist/client
+      staticFiles: __dirname + '/../www' // uses dist/www
     })
 
     this.Area.configure.SessionUserService({

@@ -27,7 +27,7 @@ export class DbConnection {
   }
   async Open(): Promise<boolean> {
     try {
-      this.dbClient.on("connected", err => console.log("[DBCONNECTION CONNECTED]", err))
+      this.dbClient.on("connected", () => console.log("[DBCONNECTION CONNECTED]"))
       this.dbClient.on("error", err => console.error("[DBCONNECTION ERROR]", err))
       await this.dbClient.connect(this.url);
       return true
