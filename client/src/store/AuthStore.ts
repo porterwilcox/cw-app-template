@@ -1,4 +1,4 @@
-import Vuex, from 'vuex';
+import Vuex from 'vuex';
 import endpoints from '@server/Endpoints'
 import axios from 'axios'
 import { IState, IActionTree } from "./IStore";
