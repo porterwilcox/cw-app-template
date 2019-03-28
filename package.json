@@ -9,7 +9,7 @@
     "clean": "rm -rf dist",
     "rebuild": "npm run clean && npm run build:server && npm run build:client && cp package.json dist/package.json",
     "build:client": "npm run --prefix client build",
-    "build:server": "tsc -p tsconfig.json && npm run copy:html",
+    "build:server": "tsc -p tsconfig.json",
     "redeploy": "git push origin -d stage && npm run deploy",
     "deploy": "git subtree push --prefix dist origin stage --squash"
   },
