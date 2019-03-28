@@ -1,7 +1,5 @@
 import './Environment'
-if(process.env.NODE_ENV !== "dev"){
-  require("module-alias/register")
-}
+require("module-alias/register")
 import http from 'http'
 import Main from './Main'
 
