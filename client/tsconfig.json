@@ -11,9 +11,7 @@
     "sourceMap": false,
     "baseUrl": "./",
     "types": [
-      "webpack-env",
-      "mocha",
-      "chai"
+      "webpack-env"
     ],
     "paths": {
       "@client/*": [

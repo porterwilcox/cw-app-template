@@ -1,11 +1,19 @@
-import Vuex from 'vuex';
 import endpoints from '@server/Endpoints'
 import axios from 'axios'
 import { IState, IActionTree } from "./IStore";
 
+let dev = location.host.includes('localhost') ? true : false
+
 let auth = axios.create({
   baseURL: endpoints.AccountsUrl,
-  withCredentials: true
+  withCredentials: true,
+  timeout: 8000
+})
+
+let sample = axios.create({
+  baseURL: dev ? '//localhost:5001' : '/',
+  withCredentials: true,
+  timeout: 8000,
 })
 
 const State: IState = {
@@ -24,13 +32,30 @@ const Mutations = {
 }
 
 export const Actions: IActionTree = {
-  async authenticate({ commit }) {
+  async authenticate({ commit, dispatch }) {
     try {
-      let res = await auth.get('authenticate')
+      let res = await auth.get('account/authenticate')
       commit(Mutations.setUser.name, res.data.content)
+      dispatch('AuthCheck')
     } catch (err) {
-      let returnUrl = location.toString()
-      location.replace(`${endpoints.AccountsUrl}?redirect=${returnUrl}`)
+      // window.open(endpoints.AccountsUrl, "AuthFrame")
+      //   authFrame.classList.add("open")
+      if(!dev){
+        let returnUrl = location.toString()
+        location.replace(`${endpoints.AccountsUrl}?redirect=${returnUrl}`)
+      }
+    }
+  },
+  async AuthCheck({ commit }) {
+    try {
+      let res = await sample.get('Sample/sample/auth-check')
+      console.log('SUCCESS', res.data)
+    } catch (err) {
+      if (dev) {
+        console.error(err)
+        console.log("get your auth token from the live server")
+        return
+      }
     }
   }
 }

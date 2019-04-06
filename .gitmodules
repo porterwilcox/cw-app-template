@@ -1,1 +1,4 @@
 
+[submodule "submodules/entities"]
+	path = submodules/entities
+	url = https://d40ce8775ca84b5f76c70ac549b0412e77589522@github.com/jakeoverall/codeworks-entities

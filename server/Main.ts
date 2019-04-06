@@ -31,7 +31,7 @@ class Main {
         }),
         ...AuthProvider
       ],
-      staticFiles: __dirname + '/../www' // uses dist/www
+      staticFiles: __dirname + '/../www'
     })
 
     this.Area.configure.SessionUserService({
@@ -61,9 +61,5 @@ class Main {
     this.LoadAreas()
   }
 }
-
-
-
-
 
 export default Main

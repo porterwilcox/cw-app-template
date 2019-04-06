@@ -10,7 +10,7 @@ try {
   const server = http.createServer(main.Area.expressApp)
   main.AttachZones(server)
   server.listen(PORT, () => {
-    console.log("{{name}} Listening on port:", PORT);
+    console.log("CodeWorksAcademy Listening on port:", PORT);
   })
 } catch (err) {
   console.log(err);

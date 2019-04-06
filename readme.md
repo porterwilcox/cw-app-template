@@ -1,4 +1,4 @@
-# {{name}}
+# CodeWorksAcademy
 
 ## Create Project
 ```
@@ -52,3 +52,33 @@ starts the server
   - --danger: #e3624c;
   - --light: #f8f9fa;
   - --dark: #221f1f;
+
+
+
+# Deploying a subfolder to GitHub Pages
+### Step 1
+Remove the `dist` directory from the project’s `.gitignore` file.
+
+```sh
+npm run rebuild
+```
+
+### Step 2
+Make sure git knows about your subtree (the subfolder with your site).
+
+```sh
+git add dist && git commit -m "Initial dist subtree commit"
+```
+
+### Step 3
+Use subtree push to send it to the `stage` branch on GitHub.
+
+```sh
+npm run deploy
+```
+
+
+### Include SubModules
+
+CodeWorks-Entities
+QuickComponents

@@ -5,6 +5,11 @@ import { SampleService } from "@server/Areas/SampleArea/SampleService";
 export default class SampleController {
   _sampleService: SampleService;
 
+  @HttpGet("auth-check")
+  AuthCheck(){
+    return SessionUser().user
+  }
+
   @HttpPost("login")
   @FromBody(Object)
   async Login(_, data: any): Promise<any> {

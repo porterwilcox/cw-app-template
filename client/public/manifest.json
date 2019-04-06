@@ -1,6 +1,6 @@
 {
-  "name": "{{name}}",
-  "short_name": "{{name}}",
+  "name": "CodeWorksAcademy-{{name}}",
+  "short_name": "CodeWorksAcademy",
   "icons": [
     {
       "src": "./img/icons/android-chrome-192x192.png",

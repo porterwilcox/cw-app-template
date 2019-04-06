@@ -5,7 +5,10 @@ export default new Area({
   controllersPath: __dirname + "/SampleControllers",
   routerMount: "/Sample",
   middleware: [(req, res, next) => {
-    if (!SessionUser().hasAccess("admin")) { return next(new ErrorUnAuthorized()) } // locks an entire area
+    if (!SessionUser().hasAccess("public")) {
+      let err = new ErrorUnAuthorized()
+      return res.status(401).send({ message: err.message, status: err.status })
+    } // locks an entire area
     next()
   }]
 })
