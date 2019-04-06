@@ -22,6 +22,15 @@
       "sourceMaps": true,
       "cwd": "${workspaceRoot}",
       "protocol": "inspector",
-    }
+    },
+    {
+      "name": "Attach to Process",
+      "type": "node",
+      "request": "attach",
+      "restart": true,
+      "port": 5858,
+      "outFiles": [],
+      "sourceMaps": true
+     }
   ]
 }
